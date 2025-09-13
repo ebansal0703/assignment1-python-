@@ -1,0 +1,200 @@
+# assignment3-python-
+#ques1
+def difference_17(n):
+    if n > 17:
+        return 2 * abs(n - 17)
+    else:
+        return 17 - n
+
+
+#ques2
+def test_range(n):
+    return (100 <= n <= 1000) or (n == 2000)
+
+
+ #ques3
+ def reverse_string(s):
+    return s[::-1]
+    # Example
+print(reverse_string("robot"))  # "tobor"
+
+
+#ques4
+def count_case(s):
+    result = {"UPPERCASE": 0, "LOWERCASE": 0}
+    for char in s:
+        if char.isupper():
+            result["UPPERCASE"] += 1
+        elif char.islower():
+            result["LOWERCASE"] += 1
+    return result
+
+
+#ques5
+def distinct_list(lst):
+    return list(set(lst))
+print(distinct_list([1, 2, 2, 3, 4, 4, 5]))
+
+
+#ques6
+def even_numbers(lst):
+    return [x for x in lst if x % 2 == 0]
+print(even_numbers([1,2,3,4,5,6,7,8,9])) 
+
+
+ #ques7
+ def robot():
+    def move():
+        return "Robot is moving..."
+    return move()
+print(robot())
+
+
+#ques8
+def student(name, age, course):
+    pass
+student.__defaults__ = ("name", "age", "course")
+
+print("Function arguments:", student.__defaults__)
+
+
+#ques9
+def move_robot(x, y, direction):
+    if direction == "up":
+        return (x, y+1)
+    elif direction == "down":
+        return (x, y-1)
+    elif direction == "left":
+        return (x-1, y)
+    elif direction == "right":
+        return (x+1, y)
+    else:
+        return (x, y)
+print(move_robot(0, 0, "up"))     
+print(move_robot(1, 1, "left")) 
+
+
+#ques10
+def classify_temperature(temp):
+    if temp < 15:
+        return "Cold"
+    elif 15 <= temp <= 30:
+        return "Moderate"
+    else:
+        return "Hot"
+print(classify_temperature(10))   
+print(classify_temperature(25))   
+print(classify_temperature(35)) 
+print(count_case("Hello Robot")
+
+
+#ques11
+def is_goal_reached(path):
+    x, y = 0, 0
+    for move in path:
+        if move == "up":
+            y += 1
+        elif move == "down":
+            y -= 1
+        elif move == "left":
+            x -= 1
+        elif move == "right":
+            x += 1
+    return (x, y) == (2, 0)
+print(is_goal_reached(["up", "right", "right", "down"]))  # True
+print(is_goal_reached(["right", "right"]))
+
+
+#ques12
+class Student:
+    def __init__(self, student_id, student_name, student_class):
+        self.student_id = student_id
+        self.student_name = student_name
+        self.student_class = student_class
+
+    def display_attributes(self):
+        print("Student ID:", self.student_id)
+        print("Student Name:", self.student_name)
+        print("Student Class:", self.student_class)
+s1 = Student("101", "Alice", "URA302")
+s1.display_attributes()
+
+
+#ques13
+class Student:
+    def __init__(self, student_id, student_name, student_class):
+        self.student_id = student_id
+        self.student_name = student_name
+        self.student_class = student_class
+
+student1 = Student("101", "Alice", "URA302")
+student2 = Student("102", "Bob", "URA302")
+print("Student 1:")
+print(f"ID: {student1.student_id}, Name: {student1.student_name}, Class: {student1.student_class}")
+
+print("Student 2:")
+print(f"ID: {student2.student_id}, Name: {student2.student_name}, Class: {student2.student_class}")
+
+
+
+#ques14
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * (self.radius ** 2)
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+c = Circle(7)
+print("Area:", c.area())
+print("Perimeter:", c.perimeter())
+
+
+#ques15
+class StringHandler:
+    def __init__(self):
+        self.text = ""
+
+    def get_String(self):
+        self.text = input("Enter a string: ")
+
+    def print_String(self):
+        print(self.text.upper())
+s = StringHandler()
+s.get_String()
+s.print_String()
+
+
+#ques 16
+class Robot:
+    def __init__(self, name, task, battery_level=100):
+        self.name = name
+        self.task = task
+        self.battery_level = battery_level
+
+    def perform_task(self):
+        if self.battery_level >= 10:
+            print(f"{self.name} is performing: {self.task}")
+            self.battery_level -= 10
+        else:
+            print(f"{self.name} has low battery. Please recharge.")
+
+    def recharge(self):
+        self.battery_level = 100
+        print(f"{self.name} is fully recharged!")
+
+    def status(self):
+        print(f"Robot Name: {self.name}")
+        print(f"Current Task: {self.task}")
+        print(f"Battery Level: {self.battery_level}%")
+r1 = Robot("Robo1", "Cleaning")
+r1.status()
+r1.perform_task()
+r1.perform_task()
+r1.status()
+r1.recharge()
+r1.status()
